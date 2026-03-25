@@ -120,16 +120,18 @@ button {
 
 /* WHATSAPP BUTTON */
 .whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  padding:14px 18px;
-  color:white;
-  border-radius:50px;
-  font-size:18px;
-  text-decoration:none;
-  box-shadow:0 5px 10px rgba(0,0,0,0.3);
+ .call-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #ff758c;
+  color: white;
+  padding: 14px 16px;
+  border-radius: 50px;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+ }
 }
 
 /* FOOTER */
@@ -143,13 +145,18 @@ footer {
 </head>
 
 <body>
-
+<section id="contact" class="section" data-aos="fade-up">
+  <h2>Contact Us</h2>
+  <p>📍 Somandepalli, Penukonda, Sri Satya Sai - 515110</p>
+  <p>📞 <a href="tel:+918519854024" style="color:#ff758c; font-weight:bold;">Call Now</a></p>
+</section>
 <header data-aos="fade-down">
   <h1>🌈 Rainbow Play School</h1>
   <p>Fun • Safe • Creative Learning</p>
 </header>
 
 <nav>
+  <a href="#contact">Contact</a>
   <a href="#about">About</a>
   <a href="#amenities">Amenities</a>
   <a href="#gallery">Gallery</a>
@@ -198,6 +205,9 @@ footer {
 </section>
 
 <a class="whatsapp" href="https://wa.me/918519854024" target="_blank">💬 Chat</a>
+  <a class="whatsapp" href="https://wa.me/918519854024" target="_blank">💬 Chat</a>
+
+<a class="call-btn" href="tel:+918519854024">📞</a>
 
 <footer data-aos="fade-up">
   <p>© 2026 Rainbow Play School</p>
