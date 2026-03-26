@@ -13,10 +13,9 @@ body {
   margin:0;
   font-family:'Poppins',sans-serif;
   background: linear-gradient(135deg,#eef2ff,#fdf6ff);
-  overflow-x:hidden;
 }
 
-/* HERO FULL SCREEN */
+/* HERO */
 .hero {
   height:90vh;
   display:flex;
@@ -27,10 +26,7 @@ body {
   background: linear-gradient(135deg,#ff758c,#ff7eb3,#ffcc70);
   color:white;
 }
-
-.hero h1 {
-  font-size:40px;
-}
+.hero h1 {font-size:38px;}
 
 .hero button {
   margin-top:20px;
@@ -96,9 +92,7 @@ nav a {
   border-radius:20px;
   display:none;
 }
-.slider img.active {
-  display:block;
-}
+.slider img.active {display:block;}
 
 /* GALLERY */
 .gallery {
@@ -109,13 +103,29 @@ nav a {
 .gallery img {
   width:100%;
   border-radius:20px;
-  transition:0.3s;
-}
-.gallery img:hover {
-  transform:scale(1.08);
 }
 
-/* FLOAT BUTTONS */
+/* FORM */
+form {
+  max-width:450px;
+  margin:auto;
+}
+input, textarea {
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+button.submit {
+  background:#ff758c;
+  color:white;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+}
+
+/* FLOAT */
 .whatsapp {
   position:fixed;
   bottom:20px;
@@ -158,16 +168,20 @@ footer {
   <a href="#about">About</a>
   <a href="#facilities">Facilities</a>
   <a href="#gallery">Gallery</a>
+  <a href="#admission">Admission</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- ABOUT -->
+<!-- ABOUT (PREVIOUS VERSION KEPT) -->
 <section id="about" class="section">
   <h2>About Us</h2>
   <p>
-    At Rainbow Play School, we provide joyful and safe learning.
-    Kids learn alphabets, numbers, and abacus in fun ways.
-    We focus on creativity, confidence, and overall development.
+    At Rainbow Play School, we believe every child is unique and deserves a joyful learning environment.
+    Our school focuses on nurturing creativity, confidence, and curiosity in young minds.
+    We teach alphabets, numbers, and abacus basics through fun and interactive activities.
+    Children learn through play, storytelling, and hands-on experiences.
+    We provide a safe, caring, and engaging atmosphere where every child feels happy and secure.
+    Our goal is to build a strong foundation for your child’s future learning journey.
   </p>
 </section>
 
@@ -202,16 +216,23 @@ footer {
   </div>
 </section>
 
-<!-- ADMISSION -->
+<!-- ADMISSION FORM -->
 <section id="admission" class="section">
-  <h2>Admission</h2>
-  <button onclick="window.open('https://wa.me/918519854024')">Apply via WhatsApp</button>
+  <h2>Admission Form</h2>
+  <form onsubmit="sendToWhatsApp(event)">
+    <input type="text" id="child" placeholder="Child Name" required>
+    <input type="number" id="age" placeholder="Age" required>
+    <input type="text" id="parent" placeholder="Parent Name" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+    <textarea id="address" placeholder="Address"></textarea>
+    <button class="submit">Submit</button>
+  </form>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
   <h2>Contact</h2>
-  <p>📍 Somandepalli, Penukonda</p>
+  <p>📍 Somandepalli, Penukonda, Sri Sathya Sai - 515110</p>
   <p><a href="tel:+918519854024">📞 Call Now</a></p>
 </section>
 
@@ -223,6 +244,12 @@ footer {
 </footer>
 
 <script>
+function sendToWhatsApp(e){
+  e.preventDefault();
+  let msg = `Admission Request:%0AChild: ${child.value}%0AAge: ${age.value}%0AParent: ${parent.value}%0APhone: ${phone.value}%0AAddress: ${address.value}`;
+  window.open("https://wa.me/918519854024?text="+msg);
+}
+
 let slides=document.querySelectorAll(".slider img");
 let i=0;
 setInterval(()=>{
